@@ -542,6 +542,165 @@
         </div>
     </section>
 
+    <!-- Resources & Documents Section -->
+    <section id="resources" style="background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light-blue) 100%); padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 1rem;">Resources & Documents</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">Download thought leadership articles, research papers, and presentation materials</p>
+            
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <!-- PDF Upload/Display Area -->
+                <div id="pdfUploadSection" style="background: white; padding: 3rem; border-radius: 25px; box-shadow: var(--shadow-lg); margin-bottom: 3rem; border: 3px dashed var(--vibrant-teal);">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="var(--vibrant-teal)" style="margin-bottom: 1rem;">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10H15V15L13,19H10Z"/>
+                        </svg>
+                        <h3 style="color: var(--primary-navy); margin-bottom: 1rem; font-size: 1.8rem;">Share Your Documents</h3>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Upload PDF documents to share with visitors. Maximum file size: 10MB</p>
+                    </div>
+                    
+                    <!-- File Input -->
+                    <div style="max-width: 600px; margin: 0 auto;">
+                        <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;" onchange="handlePDFUpload(event)">
+                        <button onclick="document.getElementById('pdfFileInput').click()" style="width: 100%; padding: 1.5rem; background: linear-gradient(135deg, var(--vibrant-teal), var(--deep-blue)); color: white; border: none; border-radius: 15px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 1rem;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(27, 154, 170, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/>
+                            </svg>
+                            Choose PDF File to Upload
+                        </button>
+                        <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">Supported format: PDF only</p>
+                    </div>
+                </div>
+
+                <!-- Available Documents Grid -->
+                <div id="documentsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Sample Document 1 -->
+                    <div class="pdf-document-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'">
+                        <div style="background: linear-gradient(135deg, var(--primary-navy), var(--deep-blue)); padding: 2rem; text-align: center;">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="white" style="margin-bottom: 1rem;">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10H15V15L13,19H10Z"/>
+                            </svg>
+                            <h4 style="color: white; font-size: 1.3rem; margin: 0;">Leadership in the AI Era</h4>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">Comprehensive guide on integrating Agentic AI with traditional leadership development methodologies.</p>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-blue); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Agentic AI</span>
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-blue); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Leadership</span>
+                            </div>
+                            <a href="#" onclick="alert('PDF would be downloaded here'); return false;" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background: var(--vibrant-teal); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='var(--deep-blue)'" onmouseout="this.style.background='var(--vibrant-teal)'">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sample Document 2 -->
+                    <div class="pdf-document-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'">
+                        <div style="background: linear-gradient(135deg, var(--vibrant-teal), var(--deep-blue)); padding: 2rem; text-align: center;">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="white" style="margin-bottom: 1rem;">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10H15V15L13,19H10Z"/>
+                            </svg>
+                            <h4 style="color: white; font-size: 1.3rem; margin: 0;">NeuroLeadership Guide</h4>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">Applying neuroscience principles to organizational effectiveness and executive coaching practices.</p>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-orange); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Neuroscience</span>
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-orange); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Coaching</span>
+                            </div>
+                            <a href="#" onclick="alert('PDF would be downloaded here'); return false;" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background: var(--vibrant-teal); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='var(--deep-blue)'" onmouseout="this.style.background='var(--vibrant-teal)'">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sample Document 3 -->
+                    <div class="pdf-document-card" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-xl)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)'">
+                        <div style="background: linear-gradient(135deg, var(--secondary-charcoal), var(--primary-navy)); padding: 2rem; text-align: center;">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="white" style="margin-bottom: 1rem;">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,19L12,15H9V10H15V15L13,19H10Z"/>
+                            </svg>
+                            <h4 style="color: white; font-size: 1.3rem; margin: 0;">Transformation Framework</h4>
+                        </div>
+                        <div style="padding: 2rem;">
+                            <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6;">Strategic framework for driving organizational transformation in Fortune 100 companies.</p>
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-blue); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Strategy</span>
+                                <span style="padding: 0.4rem 0.8rem; background: var(--bg-light-blue); color: var(--deep-blue); border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Fortune 100</span>
+                            </div>
+                            <a href="#" onclick="alert('PDF would be downloaded here'); return false;" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background: var(--vibrant-teal); color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='var(--deep-blue)'" onmouseout="this.style.background='var(--vibrant-teal)'">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                                </svg>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note for adding real PDFs -->
+                <div style="margin-top: 3rem; padding: 2.5rem; background: linear-gradient(135deg, var(--bg-light-orange), var(--bg-white)); border-radius: 20px; border-left: 5px solid var(--primary-navy); box-shadow: var(--shadow-md);">
+                    <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="var(--primary-navy)" style="flex-shrink: 0;">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                        </svg>
+                        <div style="flex: 1;">
+                            <h4 style="color: var(--primary-navy); margin: 0 0 1rem 0; font-size: 1.4rem;">📄 Where to Upload Your PDF Files</h4>
+                            <p style="color: var(--text-dark); margin: 0 0 1.5rem 0; line-height: 1.8; font-size: 1.05rem;">You have <strong>3 easy options</strong> to upload and host your PDF documents:</p>
+                            
+                            <div style="display: grid; gap: 1.5rem;">
+                                <!-- Option 1 -->
+                                <div style="background: white; padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--vibrant-teal);">
+                                    <h5 style="color: var(--vibrant-teal); margin: 0 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span style="background: var(--vibrant-teal); color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">1</span>
+                                        GitHub Repository (Recommended)
+                                    </h5>
+                                    <p style="margin: 0 0 0.5rem 0; color: var(--text-dark); line-height: 1.6;">Upload directly to a <code style="background: var(--bg-light-blue); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.9rem;">documents/</code> folder in your repository. Perfect for GitHub Pages hosting.</p>
+                                    <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;"><strong>Already created:</strong> The <code style="background: var(--bg-light-blue); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">documents/</code> folder is ready in your repo!</p>
+                                </div>
+
+                                <!-- Option 2 -->
+                                <div style="background: white; padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--deep-blue);">
+                                    <h5 style="color: var(--deep-blue); margin: 0 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span style="background: var(--deep-blue); color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">2</span>
+                                        Cloud Storage (Easiest)
+                                    </h5>
+                                    <p style="margin: 0; color: var(--text-dark); line-height: 1.6;">Upload to <strong>Google Drive</strong>, <strong>Dropbox</strong>, or <strong>OneDrive</strong>, then get a shareable link. No file size limits!</p>
+                                </div>
+
+                                <!-- Option 3 -->
+                                <div style="background: white; padding: 1.5rem; border-radius: 15px; border-left: 4px solid var(--primary-navy);">
+                                    <h5 style="color: var(--primary-navy); margin: 0 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                        <span style="background: var(--primary-navy); color: white; border-radius: 50%; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700;">3</span>
+                                        GitHub Releases
+                                    </h5>
+                                    <p style="margin: 0; color: var(--text-dark); line-height: 1.6;">Use GitHub Releases for larger files. Great for versioning and keeping your repository clean.</p>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--vibrant-teal); border-radius: 12px; text-align: center;">
+                                <p style="color: white; margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600;">📖 Complete Step-by-Step Instructions</p>
+                                <p style="color: white; margin: 0 0 1rem 0; opacity: 0.95; line-height: 1.6;">See <strong>PDF-UPLOAD-GUIDE.md</strong> in the repository root for detailed instructions on each method, file naming best practices, and how to update the download links.</p>
+                                <a href="https://github.com/c4r6n4w69z-cyber/edsalas.github.io/blob/main/PDF-UPLOAD-GUIDE.md" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: white; color: var(--vibrant-teal); text-decoration: none; border-radius: 8px; font-weight: 700; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                                    </svg>
+                                    View Full Upload Guide
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Speaking & Leadership Forums Section -->
     <section id="speaking" style="background: var(--bg-white); padding: 5rem 0;">
         <div class="container">
